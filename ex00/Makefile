@@ -5,14 +5,15 @@ BIN=ex00
 
 INC=inc/
 
-HFILE=
+HFILE=utils.hpp
 
 
 HDR= $(addprefix $(INC)/, $(HFILE))
 
 SDIR=src
 
-SFILE=main.cpp
+SFILE=main.cpp\
+	utils.cpp
 
 SRC=$(addprefix $(SDIR)/, $(SFILE))
 
