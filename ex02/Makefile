@@ -1,18 +1,20 @@
 CC=clang++
 C_FLAGS=-Wall -Wextra -Werror -std=c++98
 
-BIN=
+BIN=ex02
 
 INC=inc/
 
-HFILE=
+HFILE=Base.hpp\
+	utils.hpp
 
 
 HDR= $(addprefix $(INC)/, $(HFILE))
 
 SDIR=src
 
-SFILE=
+SFILE=main.cpp\
+	utils.cpp
 
 SRC=$(addprefix $(SDIR)/, $(SFILE))
 

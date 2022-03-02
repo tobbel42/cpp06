@@ -1,18 +1,19 @@
 CC=clang++
 C_FLAGS=-Wall -Wextra -Werror -std=c++98
 
-BIN=
+BIN=ex01
 
 INC=inc/
 
-HFILE=
+HFILE=utils.hpp
 
 
-HDR= $(addprefix $(INC)/, $(HFILE))
+HDR=$(addprefix $(INC)/, $(HFILE))
 
 SDIR=src
 
-SFILE=
+SFILE=main.cpp\
+	utils.cpp
 
 SRC=$(addprefix $(SDIR)/, $(SFILE))
 
@@ -31,7 +32,7 @@ $(ODIR):
 	mkdir obj
 
 $(ODIR)/%.o: $(SDIR)/%.cpp
-	$(CC) $(C_FLAGS) $^ -c -o $@
+	$(CC) $(C_FLAGS) $^ -c -o $@ -I $(INC)
 
 clean:
 	rm -fd $(OBJ) $(ODIR)
