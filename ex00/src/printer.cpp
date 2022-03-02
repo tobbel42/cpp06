@@ -30,7 +30,7 @@ void	printFloat( const Data & data ,int len, int type )
 {
 	std::cout << std::showpoint;
 	if (type == CHAR)
-		std::cout.precision((data.c > 99)? 4 : 3); // toDo
+		std::cout.precision((data.c > 99)? 4 : 3);
 	if (type == INT)
 		std::cout.precision(len + 1);
 	if (type == FLOAT)

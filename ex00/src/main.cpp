@@ -10,6 +10,7 @@ int main(int argc, char **argv)
 
 	typeChecks	typeCheck[] = { isChar, isInt, isFloat, isDouble, NULL };
 	Data		data;
+
 	for (int i = 0; i < 4; i++)
 		data.err[i] = 0;
 	int			type = 0;
@@ -17,7 +18,7 @@ int main(int argc, char **argv)
 	while (typeCheck[type] && !typeCheck[type](argv[1]))
 		type++;
 
-	//ToDO E Catcher
+
 	if (type == CHAR)
 		data.c = argv[1][0];
 	else if (type == INT)
@@ -38,8 +39,6 @@ int main(int argc, char **argv)
 		std::cout << "Unknown literal" << std::endl;
 		return (1);
 	}
-
-	std::cout << errno << std::endl;
 
 	/*
 	//Casting to a more precise type -> no problem, data can be represented
@@ -66,7 +65,7 @@ int main(int argc, char **argv)
 	switch(type) {
 		case DOUBLE : {
 			if ((data.d > (double)std::numeric_limits<float>::max() ||
-				data.d < (double)std::numeric_limits<float>::min()) &&
+				data.d < (double)std::numeric_limits<float>::lowest()) &&
 				data.d != std::numeric_limits<double>::infinity() &&
 				data.d != -1 * std::numeric_limits<double>::infinity())
 				data.err[FLOAT] = ERR_RANGE;
@@ -97,7 +96,7 @@ int main(int argc, char **argv)
 					data.err[CHAR] = ERR_NOPRINT;
 			}
 		}
-	}; //ToDo caster functions, printer functions
+	};
 
 	int	len = ft_strlen(argv[1]);
 

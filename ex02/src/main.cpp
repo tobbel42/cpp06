@@ -12,13 +12,16 @@ int	main( void )
 	{
 		ptr = generate();
 		identify(ptr);
+		delete	ptr;
 	}
 	std::cout << "\nThen we identify references" << std::endl;
 
 	for (int i = 0; i < LOOPSIZE; i++)
 	{
-		Base	&ref = *generate();
+		ptr = generate();
+		Base	&ref = *ptr;
 		identify(ref);
+		delete	ptr;
 	}
 
 	return (0);
