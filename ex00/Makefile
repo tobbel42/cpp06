@@ -13,7 +13,8 @@ HDR= $(addprefix $(INC)/, $(HFILE))
 SDIR=src
 
 SFILE=main.cpp\
-	utils.cpp
+	utils.cpp\
+	printer.cpp
 
 SRC=$(addprefix $(SDIR)/, $(SFILE))
 

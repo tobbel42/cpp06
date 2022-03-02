@@ -5,6 +5,7 @@
 # include <string>
 # include <iomanip>
 # include <cerrno>
+# include <cmath>
 # include <limits>
 
 # define CHAR 0
@@ -18,13 +19,12 @@ typedef struct	Data{
 	int		i;
 	float	f;
 	double	d;
-	int		e[4];
+	int		err[4];
 } Data;
 
 # define ERR_NOPRINT 1
 # define ERR_IMPOSSIBLE 2
-# define ERR_UNDERFLOW 3
-# define ERR_OVERFLOW 4
+# define ERR_RANGE 3
 
 int	isPrint( char c );
 int isDigit( char c );
@@ -34,5 +34,10 @@ int isInt( char *str );
 int	ft_strncmp(char *s1, const std::string & s2, int n);
 int isFloat( char *str );
 int isDouble( char *str );
+
+void	printChar( const Data & data );
+void	printInt( const Data & data );
+void	printFloat( const Data & data ,int len, int type );
+void	printDouble( const Data & data, int len, int type );
 
 #endif
